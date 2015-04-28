@@ -1,22 +1,22 @@
 // ==UserScript==
-// @name			xREL Advanced
-// @namespace		xRELAdvanced
+// @name			xREL-Advanced
+// @namespace		https://github.com/d3rMoB/xREL-Advanced
 // @description		This Script adds some functions to xREL
 // @autor			MoB
 // @email			der.mad.mob(at)gmail.com
 // @include			*xrel.to*
 // @exclude			http://api.xrel.to*
 // @exclude			https://api.xrel.to*
-// @icon			https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/blob/master/xrel.png
-// @version			0.2
 // @require			http://code.jquery.com/jquery-latest.js
-// @require			https://raw.githubusercontent.com/Krinkle/jquery-json/master/dist/jquery.json.min.js
+// @require			https://github.com/Krinkle/jquery-json/raw/master/dist/jquery.json.min.js
 // @grant			GM_log
 // @grant			GM_addStyle
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
-// @updateURL		https://github.com/d3rMoB/xREL-Advanced/blob/master/xREL.to_Advanced.user.js
+// @icon			https://github.com/d3rMoB/xREL-Advanced/raw/master/xrel.png
+// @updateURL		https://github.com/d3rMoB/xREL-Advanced/raw/master/xREL.to_Advanced.user.js
+// @version			0.1
 // ==/UserScript==
 
 // release name search engines
