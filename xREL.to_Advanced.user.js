@@ -16,7 +16,7 @@
 // @grant			GM_xmlhttpRequest
 // @icon			https://github.com/d3rMoB/xREL-Advanced/raw/master/xrel.png
 // @updateURL		https://github.com/d3rMoB/xREL-Advanced/raw/master/xREL.to_Advanced.user.js
-// @version			0.1.1
+// @version			0.2
 // ==/UserScript==
 
 // release name search engines
@@ -328,7 +328,7 @@ $(document).ready(function() {
     }, function() {});
 	
 	// config panel	
-	$('body').prepend("<div id='xrelSeConfig' style='text-align: left; -moz-box-shadow: 0 0 5px #888; -webkit-box-shadow: 0 0 5px #888; box-shadow: 0 0 5px #888; position: absolute; top:0px; left:-155px; padding: 10px; width: 150px; min-height: 50px; height: auto; background-color: rgba(255,255,255,0.9); z-index:1000;'><a href='#' id='xrelSeConfgiClose'>Close</a></div>")	
+	$("html body h1:contains('xREL')").parent().prepend("<div id='xrelSeConfig' style='text-align: left; -moz-box-shadow: 0 0 5px #888; -webkit-box-shadow: 0 0 5px #888; box-shadow: 0 0 5px #888; position: absolute; top:0px; left:-155px; padding: 10px; width: 150px; min-height: 50px; height: auto; background-color: rgba(255,255,255,0.9); z-index:1000;'><a href='#' id='xrelSeConfgiClose'>Close</a></div>")	
     //-moz-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px;
 
     $('#xrelSeConfig').hover(function() { 
