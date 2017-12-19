@@ -7,7 +7,7 @@
 // @include			*xrel.to*
 // @exclude			http*://api.xrel.to*
 // @require			https://code.jquery.com/jquery-latest.js
-// @require			https://github.com/Krinkle/jquery-json/raw/master/dist/jquery.json.min.js
+// @require			https://raw.githubusercontent.com/Krinkle/jquery-json/master/dist/jquery.json.min.js
 // @connect         api.themoviedb.org
 // @connect         image.tmdb.org
 // @connect         boerse.to
@@ -15,9 +15,9 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
-// @icon64			https://github.com/d3rMoB/xREL-Advanced/raw/master/img/xrel.png
-// @updateURL		https://github.com/d3rMoB/xREL-Advanced/raw/master/xREL.to_Advanced.user.js
-// @version			1.0.0
+// @icon64			https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/xrel.png
+// @updateURL		https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/xREL.to_Advanced.user.js
+// @version			0.3.0
 // ==/UserScript==
 
 // release name search engines
@@ -75,7 +75,7 @@ newEngine = {
     id : "1loadsx",
     title : "1load.sx",
     baseUrl : "https://1load.sx",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/1loadsx.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/1loadsx.png",
     method : "get",
     searchName : "s",
     searchUrl : "http://1load.sx",
@@ -88,7 +88,7 @@ newEngine = {
     id : "boerseto",
     title : "boerse.to",
     baseUrl : "https://boerse.to",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/boerseto.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/boerseto.png",
     method : "post",
     searchName : "keywords",
     searchUrl : "https://boerse.to/search/search",
@@ -103,7 +103,7 @@ newEngine = {
     id : "crawlinet",
     title : "crawli.net",
     baseUrl : "http://www.crawli.net/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/crawlinet.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/crawlinet.png",
     method : "post",
     searchName : "key",
     searchUrl : "http://www.crawli.net/all/",
@@ -116,7 +116,7 @@ newEngine = {
     id : "ddlwarezto",
     title : "ddl-warez.to",
     baseUrl : "https://ddl-warez.to",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/ddlwarezto.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/ddlwarezto.png",
     method : "get",
     searchName : "search",
     searchUrl : "https://ddl-warez.to",
@@ -129,7 +129,7 @@ newEngine = {
     id : "gloadcc",
     title : "gload.cc",
     baseUrl : "http://gload.cc",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/gloadcc.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/gloadcc.png",
     method : "get",
     searchName : "s",
     searchUrl : "http://gload.cc",
@@ -142,7 +142,7 @@ newEngine = {
     id : "g4ume",
     title : "g4u.me",
     baseUrl : "http://www.g4u.me/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/g4ume.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/g4ume.png",
     method : "post",
     searchName : "searchItem",
     searchUrl : "http://www.g4u.me/search.html",
@@ -155,7 +155,7 @@ newEngine = {
     id : "movieblogorg",
     title : "movie-blog.org",
     baseUrl : "http://www.movie-blog.org",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/movieblogorg.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/movieblogorg.png",
     method : "get",
     searchName : "s",
     searchUrl : "http://www.movie-blog.org/index.php",
@@ -168,7 +168,7 @@ newEngine = {
     id : "scenedownloadspw",
     title : "scenedownloads.pw",
     baseUrl : "https://scenedownloads.pw",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/scenedownloadspw.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/scenedownloadspw.png",
     method : "get",
     searchName : "search",
     searchUrl : "https://scenedownloads.pw",
@@ -181,7 +181,7 @@ newEngine = {
     id : "warezworldorg",
     title : "warez-world.org",
     baseUrl : "http://warez-world.org/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/warezworldorg.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/warezworldorg.png",
     method : "get",
     searchName : "sq",
     searchUrl : "http://warez-world.org/search/",
@@ -194,7 +194,7 @@ newEngine = {
     id : "googlede",
     title : "google.de",
     baseUrl : "http://www.google.de/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/googlede.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/googlede.png",
     method : "get",
     searchName : "as_q",
     searchUrl : "http://www.google.de/search",
@@ -211,7 +211,7 @@ newEngine = {
     id : "3dlam",
     title : "3dl.am",
     baseUrl : "http://3dl.am",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/3dlam.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/3dlam.png",
     method : "get",
     searchName : "Suche",
     searchUrl : "http://3dl.am",
@@ -224,7 +224,7 @@ newEngine = {
     id : "ddlsearchbiz",
     title : "ddl-search.biz",
     baseUrl : "http://ddl-search.biz/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/ddlsearchbiz.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/ddlsearchbiz.png",
     method : "post",
     searchName : "allesSearchInput",
     searchUrl : "http://ddl-search.biz/Alles/",
@@ -237,7 +237,7 @@ newEngine = {
     id : "funxdpw",
     title : "funxd.pw",
     baseUrl : "http://funxd.pw/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/funxdpw.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/funxdpw.png",
     method : "get",
     searchName : "s",
     searchUrl : "http://funxd.pw/",
@@ -250,7 +250,7 @@ newEngine = {
     id : "funxdtv",
     title : "funxd.tv",
     baseUrl : "http://funxd.tv/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/funxdtv.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/funxdtv.png",
     method : "get",
     searchName : "sq",
     searchUrl : "http://funxd.tv/search/",
@@ -263,7 +263,7 @@ newEngine = {
     id : "goldeselto",
     title : "goldesel.to",
     baseUrl : "http://goldesel.to/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/goldeselto.png",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/goldeselto.png",
     method : "url",
     searchUrl : "http://goldesel.to/suche/%s",
     active : false
@@ -374,7 +374,7 @@ $(document).ready(function() {
             var id = $(this).attr('id');
             config[id] = false;
             xrelConfig[id] = false;
-            
+
             if ( id == 'expandedtrailers' ) {
                 expandTrailers(true);
             } else {
@@ -673,7 +673,7 @@ $(document).ready(function() {
             else
                 content = $(this).children('span').html();
 
-            html = '<br><span class="getReleaseName" data-id="copybutton" data-name="' + content + '"><img src="https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/development/img/copy.png"></span>';
+            html = '<br><span class="getReleaseName" data-id="copybutton" data-name="' + content + '"><img src="https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/copy.png"></span>';
             $(this).parent().parent().find('.release_options').append(html);
         });
 
