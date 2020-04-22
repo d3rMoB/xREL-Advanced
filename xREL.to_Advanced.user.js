@@ -18,7 +18,7 @@
 // @grant			GM_xmlhttpRequest
 // @icon64			https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/xrel.png
 // @updateURL		https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/xREL.to_Advanced.user.js
-// @version			0.3.1
+// @version			0.3.2
 // ==/UserScript==
 
 // release name search engines
@@ -692,7 +692,7 @@ $(document).ready(function() {
 
     // Create a copy button in the release options
     function copyButton() {
-        $('.release_item [class^="release_title"] [class^="sub"]').each(function() {
+        $('.release_item [class^="release_title"] a[class^="sub"]').each(function() {
             var content;
 
             if($(this).hasClass('extdirname')) {
