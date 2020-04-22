@@ -152,15 +152,15 @@ newEngine = {
 };
 searchEngines.push(newEngine);
 
-// movie-blog.org
+// movie-blog.sx
 newEngine = {
-    id : "movieblogorg",
-    title : "movie-blog.org",
-    baseUrl : "http://www.movie-blog.org",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/movieblogorg.png",
+    id : "movieblogsx",
+    title : "movie-blog.sx",
+    baseUrl : "http://www.movie-blog.sx",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/movieblogsx.png",
     method : "get",
     searchName : "s",
-    searchUrl : "http://www.movie-blog.org/index.php",
+    searchUrl : "http://www.movie-blog.sx/index.php",
     active : false
 };
 searchEngines.push(newEngine);
