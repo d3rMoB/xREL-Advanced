@@ -139,15 +139,15 @@ newEngine = {
 };
 searchEngines.push(newEngine);
 
-// g4u.me
+// g4u.to
 newEngine = {
-    id : "g4ume",
-    title : "g4u.me",
-    baseUrl : "http://www.g4u.me/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/g4ume.png",
+    id : "g4uto",
+    title : "g4u.to",
+    baseUrl : "https://g4u.to/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/g4uto.png",
     method : "post",
     searchName : "searchItem",
-    searchUrl : "http://www.g4u.me/search.html",
+    searchUrl : "https://g4u.to/search.html",
     active : false,
 };
 searchEngines.push(newEngine);
@@ -184,16 +184,16 @@ searchEngines.push(newEngine);
 newEngine = {
     id : "warezworldorg",
     title : "warez-world.org",
-    baseUrl : "http://warez-world.org/",
+    baseUrl : "https://warez-world.org/",
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/warezworldorg.png",
-    method : "get",
-    searchName : "sq",
-    searchUrl : "http://warez-world.org/search/",
+    method : "post",
+    searchName : "q",
+    searchUrl : "https://warez-world.org/search",
     active : false
 };
 searchEngines.push(newEngine);
 
-// Google
+// google.de
 newEngine = {
     id : "googlede",
     title : "google.de",
@@ -229,11 +229,11 @@ productNameSearchEngines.push(newEngine);
 newEngine = {
     id : "ddlsearchbiz",
     title : "ddl-search.biz",
-    baseUrl : "http://ddl-search.biz/",
+    baseUrl : "http://www.ddl-search.biz/",
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/ddlsearchbiz.png",
     method : "post",
     searchName : "allesSearchInput",
-    searchUrl : "http://ddl-search.biz/Alles/",
+    searchUrl : "http://www.ddl-search.biz/Alles/",
     active : false
 };
 productNameSearchEngines.push(newEngine);
