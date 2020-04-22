@@ -11,19 +11,21 @@
 // @connect         api.themoviedb.org
 // @connect         image.tmdb.org
 // @connect         boerse.to
+// @connect         warez.to
 // @grant			GM_addStyle
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
 // @icon64			https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/xrel.png
 // @updateURL		https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/xREL.to_Advanced.user.js
-// @version			0.3.0
+// @version			0.3.1
 // ==/UserScript==
 
 // release name search engines
 var searchEngines = [];
 var productNameSearchEngines = [];
 var xrelOptions = [];
+var newEngine = [];
 
 // Options
 
@@ -163,15 +165,17 @@ newEngine = {
 };
 searchEngines.push(newEngine);
 
-// scenedownloads.pw
+// warez.to
 newEngine = {
-    id : "scenedownloadspw",
-    title : "scenedownloads.pw",
-    baseUrl : "https://scenedownloads.pw",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/scenedownloadspw.png",
-    method : "get",
-    searchName : "search",
-    searchUrl : "https://scenedownloads.pw",
+    id : "warezto",
+    title : "warez.to",
+    baseUrl : "https://warez.to",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/warezto.png",
+    method : "post",
+    searchName : "keyword",
+    searchUrl : "https://warez.to/search",
+    tokenUrl : "https://warez.to/",
+    tokenName : "_token",
     active : false
 };
 searchEngines.push(newEngine);
@@ -206,15 +210,17 @@ searchEngines.push(newEngine);
 // product name based search engines
 // [if the search of the page only works with product names, not release names!]
 
-// 3dl.am
+// 3dl.tv
 newEngine = {
-    id : "3dlam",
-    title : "3dl.am",
-    baseUrl : "http://3dl.am",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/3dlam.png",
+    id : "3dltv",
+    title : "3dl.tv",
+    baseUrl : "http://3dl.tv",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/3dltv.png",
     method : "get",
-    searchName : "Suche",
-    searchUrl : "http://3dl.am",
+    searchName : "q",
+    searchParm : "action",
+    searchParmValue : "search",
+    searchUrl : "https://3dl.tv/",
     active : false
 };
 productNameSearchEngines.push(newEngine);
@@ -245,15 +251,15 @@ newEngine = {
 };
 productNameSearchEngines.push(newEngine);
 
-// funxd.tv
+// funxd.site
 newEngine = {
-    id : "funxdtv",
-    title : "funxd.tv",
-    baseUrl : "http://funxd.tv/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/funxdtv.png",
+    id : "funxdsite",
+    title : "funxd.site",
+    baseUrl : "http://funxd.site/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/funxdsite.png",
     method : "get",
-    searchName : "sq",
-    searchUrl : "http://funxd.tv/search/",
+    searchName : "s",
+    searchUrl : "http://funxd.site/",
     active : false
 };
 productNameSearchEngines.push(newEngine);
@@ -290,8 +296,7 @@ function fetchConfig() {
     var value = GM_getValue(xrelSearchKey, "__default");
     if(value == "__default") {
         return defaultPersistConfigObj;
-    }
-    else {
+    } else {
         return $.evalJSON(value);
     }
 }
@@ -346,8 +351,9 @@ $(document).ready(function() {
     //-moz-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px;
 
     var hidden;
-    if(!xrelConfig.searchbars)
+    if(!xrelConfig.searchbars) {
         hidden = "display: none;";
+    }
 
     $('#xrelAdvMenu').append('<div class="xrelAdvMenuConfig"><b>Options</b><br>' + buildActivatorElements(xrelOptions) + '</div><div data-id="searchbars" style="'+ hidden +'"><div class="xrelAdvMenuSearch"><b>Release Name Based</b><br>' + buildActivatorElements(searchEngines) + '</div><div class="xrelAdvMenuNameSearch"><b>Product Name Based</b><br>' + buildActivatorElements(productNameSearchEngines) + '</div></span>');
 
@@ -466,10 +472,11 @@ $(document).ready(function() {
         for (var i = 0; i < sEngines.length; i++) {
             var engine = sEngines[i];
 
-            if (engine.icon)
+            if (engine.icon) {
                 text += '<input class="xrelSeCheckbox" id="' + engine.id + '" type="checkbox" name="' + engine.id + '" value="' + engine.id + '" />&nbsp;<img border="0" src=' + engine.icon + ' alt="' + engine.title + '" width="13" height="13" />&nbsp;<a href="' + engine.baseUrl + '">' + engine.title + '<a /><br /> ';
-            else
+            } else {
                 text += '<span class="masterTooltip" title="'+ engine.info +'"><input class="xrelOptionCheckbox" id="' + engine.id + '" type="checkbox" name="' + engine.id + '" value="' + engine.id + '" />&nbsp;' + engine.title + '</span><br />';
+            }
         }
         return text;
     }
@@ -481,8 +488,9 @@ $(document).ready(function() {
             var engine = sEngines[i];
             var hidden = "";
 
-            if(!xrelConfig[engine.id])
+            if(!xrelConfig[engine.id]) {
                 hidden = "display: none;";
+            }
 
             links += '<span style="' + hidden + '" class="xrelSeToggle" data-id="' + engine.id + '" data-rel="' + relName + '"><img border="0" src=' + engine.icon + ' alt="' + engine.title + '" width="13" height="13" />&nbsp;</span>';
         }
@@ -492,8 +500,9 @@ $(document).ready(function() {
 
     function openUrl(id, rel) {
         var sEngine = getObjects(searchEngines, 'id', id);
-        if (jQuery.isEmptyObject(sEngine[0]))
+        if ($.isEmptyObject(sEngine[0])) {
             sEngine = getObjects(productNameSearchEngines, 'id', id);
+        }
 
         if (sEngine[0].method == "url") {
             var url = sEngine[0].searchUrl.replace(/%s/, rel);
@@ -508,8 +517,9 @@ $(document).ready(function() {
                         if (this.status == 200) {
                             createForm(sEngine, rel, $(this.responseText).find('input[name='+sEngine[0].tokenName+']').attr('value'));
                         } else {
-                            if (confirm("Auf "+ sEngine[0].id +" wechseln?"))
+                            if (confirm("Auf "+ sEngine[0].id +" wechseln?")) {
                                 window.open(sEngine[0].baseUrl);
+                            }
                         }
                     }
                 }
@@ -534,6 +544,14 @@ $(document).ready(function() {
         hiddenField.setAttribute("value", rel);
         form.appendChild(hiddenField);
 
+        if (engine[0].searchParm) {
+            hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", engine[0].searchParm);
+            hiddenField.setAttribute("value", engine[0].searchParmValue);
+            form.appendChild(hiddenField);
+        }
+
         if (engine[0].tokenName) {
             hiddenField = document.createElement("input");
             hiddenField.setAttribute("type", "hidden");
@@ -551,18 +569,24 @@ $(document).ready(function() {
         GM_addStyle(".release_item {	height: auto !important; overflow: hidden !important; } ");
 
         // release list (add a collectr icon to the rel-list)
-        $('div[class^=release_title] a.sub_link span').each(function() {
-            var relName = $(this).text();
-            var productLink = $(this).parent().parent().children('a').first();
-            var productName = productLink.text();
+        $('div[class^=release_title] a[class^=sub]').each(function() {
+            var relName;
+            var productName;
+            var productLink = $(this).parent().children('a').first();
 
-            if($(this).hasClass("truncd") && $(this).is("[title]"))
+            if($(this).hasClass("extdirname") && $(this).is("[title]")) {
                 relName = $(this).attr('title');
+            } else {
+                relName = $(this).text();
+            }
 
-            if(productLink.is("[title]"))
+            if(productLink.is("[title]")) {
                 productName = productLink.attr('title');
+            } else {
+                productName = productLink.text();
+            }
 
-            $(this).parent().after('<br /><span data-id="searchbars">' + createIcon(productName, productNameSearchEngines) + createIcon(relName, searchEngines) + '</span>' );
+            $(this).after('<br /><span data-id="searchbars">' + createIcon(productName, productNameSearchEngines) + createIcon(relName, searchEngines) + '</span>' );
         });
 
         // nfo view (add a collectr icon to the nfo view title)
@@ -587,13 +611,16 @@ $(document).ready(function() {
     function getObjects(obj, key, val) {
         var objects = [];
         for (var i in obj) {
-            if (!obj.hasOwnProperty(i))
+            if (!obj.hasOwnProperty(i)) {
                 continue;
+            }
 
-            if (typeof obj[i] == 'object')
+            if (typeof obj[i] == 'object') {
                 objects = objects.concat(getObjects(obj[i], key, val));
-            else if (i == key && obj[key] == val)
+            }
+            else if (i == key && obj[key] == val) {
                 objects.push(obj);
+            }
         }
         return objects;
     }
@@ -611,7 +638,7 @@ $(document).ready(function() {
                 url: "https://api.themoviedb.org/3/configuration?" + apiKEY,
                 headers: {"Accept": "application/json"},
                 onload: function(data) {
-                    var myObject = jQuery.parseJSON(this.responseText);
+                    var myObject = $.parseJSON(this.responseText);
                     var baseURL = myObject.images.secure_base_url;
 
                     GM_xmlhttpRequest({
@@ -619,7 +646,7 @@ $(document).ready(function() {
                         url: "https://api.themoviedb.org/3/search/person?query=" + actor + "&" + apiKEY,
                         headers: {"Accept": "application/json"},
                         onload: function(data) {
-                            var myObject = jQuery.parseJSON(this.responseText);
+                            var myObject = $.parseJSON(this.responseText);
                             actorID = myObject.results[0].id;
 
                             GM_xmlhttpRequest({
@@ -627,7 +654,7 @@ $(document).ready(function() {
                                 url: "https://api.themoviedb.org/3/person/" + actorID + "/images?" + apiKEY,
                                 headers: {"Accept": "application/json"},
                                 onload: function(data) {
-                                    var myObject = jQuery.parseJSON(this.responseText);
+                                    var myObject = $.parseJSON(this.responseText);
                                     if (myObject.profiles.length > 0) {
                                         for (var i = 0; i < 3 && myObject.profiles.length >= i; i++) {
                                             var value = myObject.profiles[i].file_path;
@@ -665,15 +692,16 @@ $(document).ready(function() {
 
     // Create a copy button in the release options
     function copyButton() {
-        $('.release_item [class^="release_title"] .sub_link').each(function() {
+        $('.release_item [class^="release_title"] [class^="sub"]').each(function() {
             var content;
 
-            if($(this).children('span').hasClass('truncd'))
-                content = $(this).children('span').prop('title');
-            else
-                content = $(this).children('span').html();
+            if($(this).hasClass('extdirname')) {
+                content = $(this).prop('title');
+            } else {
+                content = $(this).text();
+            }
 
-            html = '<br><span class="getReleaseName" data-id="copybutton" data-name="' + content + '"><img src="https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/copy.png"></span>';
+            var html = '<br><span class="getReleaseName" data-id="copybutton" data-name="' + content + '"><img src="https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/copy.png"></span>';
             $(this).parent().parent().find('.release_options').append(html);
         });
 
