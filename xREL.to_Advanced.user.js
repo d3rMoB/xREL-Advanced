@@ -139,19 +139,6 @@ newEngine = {
 };
 searchEngines.push(newEngine);
 
-// g4u.me
-newEngine = {
-    id : "g4ume",
-    title : "g4u.me",
-    baseUrl : "http://www.g4u.me/",
-    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/g4ume.png",
-    method : "post",
-    searchName : "searchItem",
-    searchUrl : "http://www.g4u.me/search.html",
-    active : false,
-};
-searchEngines.push(newEngine);
-
 // movie-blog.sx
 newEngine = {
     id : "movieblogsx",
@@ -161,6 +148,19 @@ newEngine = {
     method : "get",
     searchName : "s",
     searchUrl : "http://www.movie-blog.sx/index.php",
+    active : false
+};
+searchEngines.push(newEngine);
+
+// nima4k.org
+newEngine = {
+    id : "nima4korg",
+    title : "nima4k.org",
+    baseUrl : "https://nima4k.org/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/nima4korg.png",
+    method : "post",
+    searchName : "search",
+    searchUrl : "https://nima4k.org/search",
     active : false
 };
 searchEngines.push(newEngine);
@@ -184,16 +184,16 @@ searchEngines.push(newEngine);
 newEngine = {
     id : "warezworldorg",
     title : "warez-world.org",
-    baseUrl : "http://warez-world.org/",
+    baseUrl : "https://warez-world.org/",
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/warezworldorg.png",
-    method : "get",
-    searchName : "sq",
-    searchUrl : "http://warez-world.org/search/",
+    method : "post",
+    searchName : "q",
+    searchUrl : "https://warez-world.org/search",
     active : false
 };
 searchEngines.push(newEngine);
 
-// Google
+// google.de
 newEngine = {
     id : "googlede",
     title : "google.de",
@@ -216,11 +216,20 @@ newEngine = {
     title : "3dl.tv",
     baseUrl : "http://3dl.tv",
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/3dltv.png",
-    method : "get",
-    searchName : "q",
-    searchParm : "action",
-    searchParmValue : "search",
-    searchUrl : "https://3dl.tv/",
+    method : "url",
+    searchUrl : "https://3dl.tv/?q=%s&action=search",
+    active : false
+};
+productNameSearchEngines.push(newEngine);
+
+// crystal-warez.in
+newEngine = {
+    id : "crystalwarezin",
+    title : "crystal-warez.in",
+    baseUrl : "https://crystal-warez.in/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/crystalwarezin.png",
+    method : "url",
+    searchUrl : "http://crystal-warez.in/suche/%s",
     active : false
 };
 productNameSearchEngines.push(newEngine);
@@ -229,11 +238,11 @@ productNameSearchEngines.push(newEngine);
 newEngine = {
     id : "ddlsearchbiz",
     title : "ddl-search.biz",
-    baseUrl : "http://ddl-search.biz/",
+    baseUrl : "http://www.ddl-search.biz/",
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/ddlsearchbiz.png",
     method : "post",
     searchName : "allesSearchInput",
-    searchUrl : "http://ddl-search.biz/Alles/",
+    searchUrl : "http://www.ddl-search.biz/Alles/",
     active : false
 };
 productNameSearchEngines.push(newEngine);
@@ -264,6 +273,19 @@ newEngine = {
 };
 productNameSearchEngines.push(newEngine);
 
+// g4u.to
+newEngine = {
+    id : "g4uto",
+    title : "g4u.to",
+    baseUrl : "https://g4u.to/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/g4uto.png",
+    method : "post",
+    searchName : "searchItem",
+    searchUrl : "https://g4u.to/search.html",
+    active : false,
+};
+productNameSearchEngines.push(newEngine);
+
 // goldesel.to
 newEngine = {
     id : "goldeselto",
@@ -272,6 +294,18 @@ newEngine = {
     icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/goldeselto.png",
     method : "url",
     searchUrl : "http://goldesel.to/suche/%s",
+    active : false
+};
+productNameSearchEngines.push(newEngine);
+
+// https://www.skidrowcodex.net/?s=bannerlord
+newEngine = {
+    id : "skidrowcodexnet",
+    title : "skidrowcodex.net",
+    baseUrl : "https://www.skidrowcodex.net/",
+    icon : "https://raw.githubusercontent.com/d3rMoB/xREL-Advanced/master/img/skidrowcodexnet.png",
+    method : "url",
+    searchUrl : "https://www.skidrowcodex.net/?s=%s",
     active : false
 };
 productNameSearchEngines.push(newEngine);
