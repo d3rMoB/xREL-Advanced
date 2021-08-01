@@ -29,7 +29,7 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 
 <b>Screanshot</b>
 <div align="center">
-	<a href="https://darsain.github.io/uosc/preview.webm"><img src="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.png"></a>
+	<a href="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.png"><img src="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.png"></a>
 </div>
 
 <br>
