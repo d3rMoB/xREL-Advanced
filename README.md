@@ -29,7 +29,7 @@
 <ol>
   <li>Installation eines beliebigen Userscript-Managers.<br>
 Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.net/</li>
-  <li>Es folgt die Installation des Scripts über folgenden Link:<br> https://github.com/d3rMoB/xREL-Advanced/raw/master/xREL.to_Advanced.user.js</li>
+  <li>Es folgt die Installation des Scripts über folgenden Link:<br> https://github.com/DudeX13/xREL-Advanced/raw/master/xREL.to_Advanced.user.js</li>
   <li>Updates werden anschließend automatisch gesucht und bei Bedarf installiert.</li>
 </ol>
 
