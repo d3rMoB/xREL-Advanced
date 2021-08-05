@@ -1,4 +1,10 @@
 # xREL-Advanced
+<b>Version 0.3.2-3</b>
+<ul>
+  <li>Add QuickCover</li>
+  <li>Add SearchDropdown to nfo view</li>
+</ul>
+
 <b>Version 0.3.2-1</b>
 <ul>
   <li>Add Darkmode CSS</li>
@@ -29,7 +35,7 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 
 <b>Screanshot</b>
 <div align="center">
-	<a href="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.png"><img src="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.png"></a>
+	<a href="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.jpg"><img src="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.jpg"></a>
 </div>
 
 <br>
