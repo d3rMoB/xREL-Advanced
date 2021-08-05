@@ -12,7 +12,7 @@
 // @grant			GM_getValue
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
-// @version			0.3.2-1
+// @version			0.3.2-3
 // ==/UserScript==
 
 /*! jQuery JSON plugin v2.6.0 | github.com/Krinkle/jquery-json */
@@ -54,6 +54,14 @@ newEngine = {
     id : "actorimages",
     title : "Actor Images",
     info : "Zeigt Bilder auf den Informationsseiten der Schauspieler und Rewgisseure an.",
+    active : true
+};
+xrelOptions.push(newEngine);
+
+newEngine = {
+    id : "quickcover",
+    title : "Quick Cover",
+    info : "Zeigt das Cover beim Hover auf Producktname.",
     active : true
 };
 xrelOptions.push(newEngine);
@@ -109,21 +117,7 @@ productNameSearchEngines.push(newEngine);                                       
 */
 
 
-
 // Release Name based search engines
-
-// predb.me
-newEngine = {
-    id : "predbme",
-    title : "predb.me",
-    baseUrl : "https://predb.me",
-    icon : "data:image/png;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAABQAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAUAAAADAAAABwAAAA0AAAARAAAAEwAAABMAAAATAAAAEwAAABMAAAATAAAAEwAAABMAAAATAAAAEwAAABEAAAANAAAABwAAAAsAAAAVAAAAHQAAAB8AAAAfAAAAHwAAAB8AAAAfAAAAHwAAAB8AAAAfAAAAHwAAAB8AAAAdAAAAFQAAAAs/IACLQCAAxT8fAMc/HwDHPx8Axz8fAMc/HwDHPx8Axz8fAMc/HwDHPx8Axz8fAMc/HwDHPx8Axz4fALM4HAB1QSAAwZmZmf+ZmZn/urq6/7q6uv+ZmZn/Ph8AyT4fAMk+HwDJmZmZ/5mZmf+6urr/urq6/5mZmf8/IADFQCAArUEgAMGZmZn/mZmZ/z4fAMkzGQDRmZmZ/5mZmf8+HwDJPh8AyZmZmf+ZmZn/Ph8AyT4fAMmZmZn/mZmZ/0EgAMFBIADBmZmZ/5mZmf8+HwDJPh8AyZmZmf+ZmZn/Ph8AyT4fAMmZmZn/mZmZ/zMZANE+HwDJmZmZ/5mZmf9BIADBQSAAwZmZmf+ZmZn/Ph8AyT4fAMmZmZn/mZmZ/z4fAMk+HwDJmZmZ/5mZmf8oFADZMxkA0ZmZmf+6urr/QSAAwUEgAMGZmZn/mZmZ/z4fAMk+HwDJmZmZ/5mZmf8+HwDJPh8AyZmZmf+ZmZn/urq6/7q6uv+ZmZn/PyAAxT8fAItBIADBmZmZ/5mZmf8+HwDJMxkA0ZmZmf+ZmZn/Ph8AyT4fAMmZmZn/mZmZ/zMZANE+HwDJmZmZ/5mZmf9BIADBQSAAwZmZmf+ZmZn/MxkA0SgUANmZmZn/urq6/z4fAMk+HwDJmZmZ/5mZmf8oFADZMxkA0ZmZmf+6urr/QSAAwUEgAMG6urr/urq6/7q6uv+6urr/urq6/z8fAMc/HwDHPx8Ax7q6uv+6urr/urq6/7q6uv+6urr/QCAAw0EgAKs+HwCLPx8AxT8fAMc+HwDJPh8AyT4fAMc/HwDHPx8AxT8fAMc+HwDHPh8AyT4fAMk+HwDJPh8Ax0AgAK06HQBlAAAAAwAAAAUAAAAHAAAACQAAAAkAAAAJAAAACQAAAAkAAAAJAAAACQAAAAkAAAAJAAAACQAAAAcAAAAFAAAAA////wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w==",
-    method : "get",
-    searchName : "search",
-    searchUrl : "https://predb.me/",
-    active : false
-};
-searchEngines.push(newEngine);
 
 // google.de
 newEngine = {
@@ -189,8 +183,12 @@ var xrelConfig = fetchConfig();
 var initOption = [];
 var timeoutID;
 
+var productLinkLast;
+var lastmatch;
+
 
 $(document).ready(function() {
+
     GM_addStyle(".release_us {	background-position: top left !important; } .release_highlight {	background-position: top !important; } .getReleaseName, .xrelSeToggle {	cursor: pointer; } .release_options {	padding-top: 0px !important; } .release_options a img {	width:13px; } .release_options span img {	width:13px; getReleaseName} .nfo_title .getReleaseName { margin-left:5px; } .nfo_title .getReleaseName img { width:16px; vertical-align: sub; }");
     GM_addStyle("#xrelAdvMenu { text-align: left; -moz-box-shadow: 0 0 5px #888; -webkit-box-shadow: 0 0 5px #888; box-shadow: 0 0 5px #888; position: fixed; top:0px; left:-160px; padding: 10px; width: 150px; min-height: 50px; height: auto; background-color: rgba(255,255,255,0.9); z-index:100; } .xrelAdvMenuConfig, .xrelAdvMenuSearch { margin-bottom: 10px }");
     GM_addStyle(".infobox {	display:none;	position:absolute;	border:1px solid #333;	background-color:#161616;	border-radius:5px;	padding:10px;	color:#fff;	font-size:12px Arial; z-index:101; }");
@@ -200,7 +198,8 @@ $(document).ready(function() {
     GM_addStyle('.dropdown-content a:hover {background-color: #ffffff;}')
     GM_addStyle('.dropdown:hover .dropdown-titel {display: block;}')
 
-
+    GM_addStyle ('#HoverCover { position: fixed; z-index: 2; background-position: center; background-repeat: no-repeat; display: none; background-color: #f2f1f1; border-style: solid; border-width: 6px; border-color: #f2f1f1; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.9); background-image: url(https://www.xrel.to/static/img/dummy-cover-dark.jpg); width: 120px; height: 170px;}');
+    GM_addStyle ('#HoverCover>div { display: inline-block; }');
 
     if (xrelConfig.darkmode) {
         darkmode();
@@ -229,6 +228,14 @@ $(document).ready(function() {
     } else {
         initOption.actorimages = false;
     }
+
+    if (xrelConfig.quickcover) {
+        quickcover(true);
+        initOption.quickcover = true;
+    } else {
+        initOption.quickcover = false;
+    }
+
     if (xrelConfig.expandedtrailers) {
         expandTrailers();
         initOption.expandedtrailers = true;
@@ -292,13 +299,15 @@ $(document).ready(function() {
             }
         });
 
+
         $('input.xrelSeCheckbox,input.xrelOptionCheckbox:not(checked)').each(function() {
             var id = $(this).attr('id');
             config[id] = false;
             xrelConfig[id] = false;
 
-            if ( id == 'expandedtrailers' ) {
-                expandTrailers(true);
+            if ( id == 'expandedtrailers' || id == 'quickcover' ) {
+                if ( id == 'expandedtrailers' ) expandTrailers(true);
+                if ( id == 'quickcover' ) quickcover(false);
             } else {
                 $('[data-id="'+ id +'"]').hide();
             }
@@ -308,6 +317,7 @@ $(document).ready(function() {
             var id = $(this).attr('id');
             config[id] = true;
             xrelConfig[id] = true;
+
             $('[data-id="'+ id +'"]').show();
         });
 
@@ -318,6 +328,8 @@ $(document).ready(function() {
 
             if (id == 'expandedtrailers')
                 expandTrailers();
+            if (id == 'quickcover')
+                quickcover(true);
 
             if ( !initOption[id] ) {
                 if (id == 'darkmode')
@@ -339,6 +351,78 @@ $(document).ready(function() {
 
         saveConfig(config);
     });
+
+
+    // Show Cover at Mouse on productName
+    // ##################################################################
+
+    $("html body h1:contains('xREL')").parent().prepend('<div id="HoverCover"></div>');
+
+
+    function quickcover(enable) {
+        if ( enable == true) {
+            $('div.release_title > a').bind (
+                "mouseenter mouseleave", HoverCover
+            );
+
+            $('div.release_title_p2p > a').bind (
+                "mouseenter mouseleave", HoverCover
+            );
+        } else {
+            $('div.release_title > a').unbind (
+                "mouseenter mouseleave", HoverCover
+            );
+
+            $('div.release_title_p2p > a').unbind (
+                "mouseenter mouseleave", HoverCover
+            );
+        }
+    }
+
+    function HoverCover(e) {
+        var titleSpan = $(this);
+
+        var productName;
+        var productLink = titleSpan.parent().children('a').first();
+
+        const div = document.getElementById('HoverCover');
+        if (e.type == 'mouseenter') {
+            div.style.display = 'block';
+            div.style.left = e.clientX+'px';
+            div.style.top = e.clientY+'px';
+
+            if (productLinkLast == productLink[0]) {
+                div.style.backgroundImage = 'url(' + lastmatch + ')';
+            } else {
+                $(function(){
+                    $.get(productLink[0], function(result){
+                        var re = /https:\/\/uploads.xrel.to\/img_cover\/(.*)-full\.JPG\"/;
+                        //var re = /<img src=\"https:\/\/uploads.xrel.to\/img_cover\/(.*)\.JPG\"/;
+                        var matches = re.exec(result);
+                        if (matches == null) {
+                            var re = /<img src=\"https:\/\/uploads.xrel.to\/img_cover\/(.*)\.JPG\"/;
+                            var matches = re.exec(result);
+                        }
+                        if (matches != null) {
+                            div.style.backgroundImage = 'url(https://uploads.xrel.to/img_cover/' + matches[1] + '.JPG)';
+                            lastmatch = 'https://uploads.xrel.to/img_cover/' + matches[1] + '.JPG)';
+                        } else {
+                            if (initOption.darkmode == true) {
+                                div.style.backgroundImage = 'url(https://www.xrel.to/static/img/dummy-cover-dark.jpg)';
+                                lastmatch = 'https://www.xrel.to/static/img/dummy-cover-dark.jpg';
+                            } else {
+                                div.style.backgroundImage = 'url(https://www.xrel.to/static/img/dummy-cover.jpg)';
+                                lastmatch = 'https://www.xrel.to/static/img/dummy-cover.jpg';
+                            }
+                        }
+                        productLinkLast = productLink[0];
+                    });
+                });
+            }
+        } else {
+            div.style.display = 'none';
+        }
+    }
 
     // Make links open in a new tab
     // ##################################################################
@@ -451,8 +535,8 @@ $(document).ready(function() {
         }
 
         if (sEngine[0].method == "mod") {
-            var url = sEngine[0].searchUrl + rel;
-            window.open(url);
+            var mod = sEngine[0].searchUrl + rel;
+            window.open(mod);
         } else if (sEngine[0].method == "url") {
             var url = sEngine[0].searchUrl.replace(/%s/, rel);
             window.open(url);
@@ -687,6 +771,16 @@ $(document).ready(function() {
             titleSpan.parent().parent().parent().find('.release_options').append(searchhtml);
         });
 
+        // nfo view (add a collectr icon to the nfo view title)
+        $('div.nfo_title div span.sub').each(function() {
+            var titleSpan = $(this);
+            var relName = titleSpan.text();
+            var productLink = $('#release_tools_content a').eq(1).attr("href");
+            var productName = productLink.replace(/.*\/(.+)\.html$/g, "$1").replace(/-/g, ' ');
+
+            var searchhtml = '<div style="float:left;" data-id="searchbarsall" class="dropdown"><img src= "' + searchallimg + '"><div class="dropdown-titel"> &nbsp; &nbsp; &nbsp; Release-Suche<div class="dropdown-content">Suchen nach:<br><div style="font-size:10px; max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow:ellipsis;">' + productName + '<br>' + relName + '</div><br>' + createIconAll(productName, productNameSearchEngines) + createIconAll(relName, searchEngines) + '<br></div></div></div>';
+            titleSpan.parent().append( '<div style="float:left;" data-id="searchbars">&nbsp;' + searchhtml + '</div>' );
+        });
 
         $('.xrelSeToggle').on("click" ,function() {
             openUrl($(this).data('all'), $(this).data('rel'));
@@ -811,6 +905,7 @@ $(document).ready(function() {
     // add css darkmode styles
     function darkmode(css) {
         GM_addStyle('#xrelAdvMenu { box-shadow: 0 0 5px #040404; background-color: #404040; color: #fff;}')
+        GM_addStyle('#HoverCover { background-color: #464646; border-color: #464646;}');
         GM_addStyle('.dropdown-titel { background: url(/static/img/bg/sidebar_top.jpg) no-repeat; line-height: 30px; height: 30px; width: 210px; display: none; position: absolute; color: #fff;background-color: #fff; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.9); z-index: 1;}')
         GM_addStyle('.dropdown-content {line-height: 20px; width: 180px; border-style: solid; border-width: 5px; border-color: #464646; padding: 0 0 0 20px; color: #fff; background-color: #242424; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.9);}')
         GM_addStyle('.dropdown-content a:hover {background-color: #3b3b3b;}')
@@ -926,5 +1021,6 @@ $(document).ready(function() {
         GM_addStyle('.trailers_new { background: #242424!important }')
         GM_addStyle('.horiz_line { background: #242424 }')
         GM_addStyle('.emoticon-popup { border: 4px solid #464646; background: #242424 }')
+        GM_addStyle('#bottom_sitemap { background: url()}')
     }
 });
