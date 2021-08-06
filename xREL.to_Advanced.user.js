@@ -13,6 +13,7 @@
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
 // @version			0.3.2-3
+// @updateURL		        https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/xREL.to_Advanced.user.js
 // ==/UserScript==
 
 /*! jQuery JSON plugin v2.6.0 | github.com/Krinkle/jquery-json */
