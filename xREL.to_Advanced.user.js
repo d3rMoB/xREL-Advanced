@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name			xREL-Advanced
-// @namespace		https://github.com/d3rMoB/xREL-Advanced
+// @namespace		https://github.com/DudeX13/xREL-Advanced
 // @description		This Script adds some functions to xREL
-// @autor			d3rMoB
-// @email			der.mad.mob(at)gmail.com
+// @autor			DudeX13
 // @include			*xrel.to*
 // @exclude			http*://api.xrel.to*
 // @connect         api.themoviedb.org
@@ -13,7 +12,8 @@
 // @grant			GM_setValue
 // @grant			GM_xmlhttpRequest
 // @version			0.3.2-3
-// @updateURL		        https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/xREL.to_Advanced.user.js
+// @updateURL		https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/xREL.to_Advanced.user.js
+// @require         config/search_config.conf
 // ==/UserScript==
 
 /*! jQuery JSON plugin v2.6.0 | github.com/Krinkle/jquery-json */
