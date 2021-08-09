@@ -1,4 +1,9 @@
 # xREL-Advanced
+<b>Version 0.3.3</b>
+<ul>
+  <li>Add QuickFilter</li>
+</ul>
+
 <b>Version 0.3.2-3</b>
 <ul>
   <li>Add QuickCover</li>
