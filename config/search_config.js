@@ -1,4 +1,10 @@
 // SearchEngine Description
+// ##################################################################
+/*
+
+!edit tampermonky/xREL-Advanced/Externals/Resources/...search_config.js
+!this file is only created when installing and saved local to the script location
+!if users edit this, all data is retained even after an update
 
 /*
 newEngine = {
