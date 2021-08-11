@@ -10,7 +10,7 @@
 
 ## Features
 <ul>
-  <li>Schnellsuche für Releases auf bekannten deutschen Downloadseiten (<a href="https://github.com/DudeX13/xREL-Advanced/edit/master/README.md#description">Konfigurierbar</a>). </li>
+  <li>Schnellsuche für Releases auf bekannten deutschen Downloadseiten (<a href="https://github.com/DudeX13/xREL-Advanced/blob/master/README.md#description">Konfigurierbar</a>). </li>
   <li>Die Profile der Schauspieler/Regisseure werden durch Bilder der Person ergänzt</li>
   <li>Funktion zum unkomplizierten Kopieren von Releasenamen</li>
   <li>Alternative Ansicht für die Rubrik mit den Top-Trailern</li>
