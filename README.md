@@ -64,7 +64,7 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 </details>
 
 ## Screenshots
-![screenshot](./img/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.jpg)
 
 
 ## Description
