@@ -1,4 +1,47 @@
 # xREL-Advanced
+> <i>Dieses Skript fügt xREL einige Funktionen hinzu</i>
+
+##
+* [Features](#features)
+* [Installation](#installation)
+* [Version](#version)
+* [Screenshots](#screenshots)
+* [Description](#description)
+
+## Features
+<ul>
+  <li>Schnellsuche für Releases auf bekannten deutschen Downloadseiten (Konfigurierbar)</li>
+  <li>Die Profile der Schauspieler/Regisseure werden durch Bilder der Person ergänzt</li>
+  <li>Funktion zum unkomplizierten Kopieren von Releasenamen</li>
+  <li>Alternative Ansicht für die Rubrik mit den Top-Trailern</li>
+  <li>Links die zu externen Seiten führen werden in einem neuen Tab geöffnet</li>
+  <li>Darkmode Funktion zum umschalten zum dunklen Webseiten Theme</li>
+  <li>Dropdownsuche für Releases auf bekannten deutschen Downloadseiten</li>
+  <li>QuickCover Ansicht Cover in Releaseübersicht</li>
+  <li>QuickFilter Filter nach Categorie, Audio, Video und nach Namen in allen Übersichten</li>
+</ul>
+
+## Installation
+<ol>
+  <li>Installation eines beliebigen Userscript-Managers.<br>
+Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.net/</li>
+  <li>Es folgt die Installation des Scripts über folgenden Link:<br> https://github.com/DudeX13/xREL-Advanced/raw/master/xREL.to_Advanced.user.js</li>
+  <li>Updates werden anschließend automatisch gesucht und bei Bedarf installiert.</li>
+</ol>
+
+## Version
+<details>
+<br>
+<b>Version 0.3.4</b>
+<ul>
+  <li>Add External user-based SearchConfig</li>
+  <li>Add Advanced CSS</li>
+  <li>Add Advanced-Dark CSS</li>
+  <li>Add Advanced-Light CSS</li>
+  <li>Add Lightmode switch back CSS</li>
+  <li>Fix some CSS styles</li>
+</ul>
+	
 <b>Version 0.3.3</b>
 <ul>
   <li>Add QuickFilter</li>
@@ -18,36 +61,24 @@
   <li>Add SearchMethod</li>
   <li>Remove all external content in the Script "jquery, images ..."</li>
 </ul>
+</details>
 
-<b>Features</b>
-<ul>
-  <li>Schnellsuche für Releases auf bekannten deutschen Downloadseiten (Konfigurierbar)</li>
-  <li>Die Profile der Schauspieler/Regisseure werden durch Bilder der Person ergänzt</li>
-  <li>Funktion zum unkomplizierten Kopieren von Releasenamen</li>
-  <li>Alternative Ansicht für die Rubrik mit den Top-Trailern</li>
-  <li>Links die zu externen Seiten führen werden in einem neuen Tab geöffnet</li>
-  <li>Darkmode Funktion zum umschalten zum dunklen Webseiten Theme</li>
-  <li>Dropdownsuche für Releases auf bekannten deutschen Downloadseiten</li>
-</ul>
+## Screenshots
+![screenshot](./img/screenshot.jpg)
 
-<b>Installation</b>
-<ol>
-  <li>Installation eines beliebigen Userscript-Managers.<br>
-Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.net/</li>
-  <li>Es folgt die Installation des Scripts über folgenden Link:<br> https://github.com/DudeX13/xREL-Advanced/raw/master/xREL.to_Advanced.user.js</li>
-  <li>Updates werden anschließend automatisch gesucht und bei Bedarf installiert.</li>
-</ol>
 
-<b>Screanshot</b>
-<div align="center">
-	<a href="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.jpg"><img src="https://raw.githubusercontent.com/DudeX13/xREL-Advanced/master/img/screanshot.jpg"></a>
-</div>
-
-<br>
-<b>Description</b>
+## Description
 <ul>
   <li>Konfigurierbar Downloadseiten</li>
 </ul>
+
+
+
+> edit tampermonky/xREL-Advanced/Externals/Resources/...search_config.js <br>
+> this file is only created when installing and saved local to the script location <br>
+> if users edit this, all data is retained even after an update
+
+
 
 ```sh
 newEngine = {
