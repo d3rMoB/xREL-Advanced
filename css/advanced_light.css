@@ -52,7 +52,7 @@ a:link, a:visited {
 }
 html {
     background: #f2f2f2 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABPIAAAABBAMAAACmmZ2iAAAALVBMVEXc3Nze3t7f39/j4+Pk5OTo6Ojr6+vt7e3u7u7w8PDx8fHy8vLz8/P+/v7///9q6wN+AAAAH0lEQVQoz2PYTS44c3pVWbDAvXejYIQCJteM2bvJBwBozjCJl498WQAAAABJRU5ErkJggg==) repeat-y top center;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #f2f2f2;
 }
 #center1 {
     background: #0000;
