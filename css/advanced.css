@@ -1,26 +1,26 @@
 .release_us {
     background-position: top left !important;
-} 
+}
 .release_highlight {
     background-position: top !important;
-} 
+}
 .getReleaseName, .xrelSeToggle {
-    cursor: pointer; 
+    cursor: pointer;
 }
 .release_options {
     padding-top: 0px !important;
 }
 .release_options a img {
-    width:13px; 
+    width:13px;
 }
 .release_options span img {
-    width:13px; getReleaseName
+    width:13px;
 }
 .nfo_title .getReleaseName {
     margin-left:5px;
 }
 .nfo_title .getReleaseName img {
-    width:16px; vertical-align: sub; 
+    width:16px; vertical-align: sub;
 }
 #xrelAdvMenu {
     text-align: left;
@@ -36,9 +36,9 @@
     height: auto;
     background-color: rgba(255,255,255,0.9);
     z-index:100;
-} 
+}
 .xrelAdvMenuConfig, .xrelAdvMenuSearch {
-    margin-bottom: 10px 
+    margin-bottom: 10px
 }
 .infobox {
     display:none;
@@ -66,8 +66,8 @@
 }
 
 .dropdown-content {
-    line-height: 20px; 
-    width: 180px; 
+    line-height: 20px;
+    width: 180px;
     border-style: solid;
     border-width: 5px;
     border-color: #f2f1f1;
