@@ -5,6 +5,7 @@
 * [Features](#features)
 * [Installation](#installation)
 * [Version](#version)
+* [ToDo](#todo)
 * [Screenshots](#screenshots)
 * [Description](#description)
 
@@ -60,6 +61,16 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
   <li>Add ModifyReleaseName</li>
   <li>Add SearchMethod</li>
   <li>Remove all external content in the Script "jquery, images ..."</li>
+</ul>
+</details>
+
+## ToDo
+<details>
+<br>
+<ul>
+  <li>Rework Darkmode CSS</li>
+  <li>Rework Lightmode CSS</li>
+  <li>Add alternate search Cover via xRel-API</li>
 </ul>
 </details>
 
