@@ -20,7 +20,7 @@
   	<li>Dropdownsuche für Releases auf bekannten deutschen Downloadseiten</li>
   	<li>QuickCover Ansicht Cover in Releaseübersicht</li>
   	<li>QuickFilter Filter nach Categorie, Audio, Video und nach Namen in allen Übersichten</li>
-  	<li>QuickFilter Produktname Filter zeigt nur ein Produkt pro Seite</li>
+  	<li>Produktname Filter zeigt nur ein Produkt pro Seite</li>
 </ul>
 
 ## Installation
