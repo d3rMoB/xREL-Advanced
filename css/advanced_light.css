@@ -152,6 +152,14 @@ html {
     color: #000;
 }
 
+#middle_spawn .article_cat + .horiz_line + div {
+    background: none !important;
+}
+
+#middle_spawn .horiz_line_dotted + div:not(.article_text):not(.comment_helpful_frame):not(.comment_links_frame) {
+    background: none !important;
+}
+
 /* Blogeintraege zuruecksetzen */
 
 .headline1_2 {
@@ -159,7 +167,7 @@ html {
 }
 
 .article_text {
-    color: #9f9f9f;
+    color: #000;
 }
 
 .blog_overview_btm_small {
@@ -236,6 +244,10 @@ table.bb_table td {
 
 .span_padding sub {
     color: #000;
+}
+
+.nfo_scaling {
+    background: url(/static/img/bg/nfo_zoom_bg.jpg) no-repeat;
 }
 
 /* Top100 */
@@ -391,19 +403,19 @@ div.table-row > div.w90, div.table-head > div.w90 {
 /* p2p NFO Post*/
 
 #p2p-nfo-post-bar-step1 {
-    filter: invert(80%);
+    filter: none;
 }
 
 #p2p-nfo-post-bar-step2 {
-    filter: invert(80%);
+    filter: none;
 }
 
 #p2p-nfo-post-bar-step3 {
-    filter: invert(80%);
+    filter: none;
 }
 
 #p2p-nfo-post-bar-step4 {
-    filter: invert(80%);
+    filter: none;
 }
 
 .wizard-steps {
