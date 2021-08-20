@@ -44,6 +44,14 @@
 
 /* xREL Advanced Dark v2*/
 
+a:link, a:visited {
+    color: #479eff;
+}
+
+a.no_extinfo {
+    color: #82a5ce;
+}
+
 html {
     background: #3b3b3b url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABPIAAAABCAYAAABUt4CRAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSIVh1YQcchQFcGCqIijVqEIFUKt0KqDyaVf0KQhaXFxFFwLDn4sVh1cnHV1cBUEwQ8QNzcnRRcp8X9JoUWMB8f9eHfvcfcOEOolplkd44CmV8xkPCamM6ti4BUBhNCHEYzKzDLmJCkBz/F1Dx9f76I8y/vcn6NHzVoM8InEs8wwK8QbxNObFYPzPnGYFWSV+Jx4zKQLEj9yXXH5jXPeYYFnhs1Ucp44TCzm21hpY1YwNeIp4oiq6ZQvpF1WOW9x1kpV1rwnf2Ewq68sc53mIOJYxBIkiFBQRRElVBClVSfFQpL2Yx7+AccvkUshVxGMHAsoQ4Ps+MH/4He3Vm5ywk0KxoDOF9v+GAICu0CjZtvfx7bdOAH8z8CV3vKX68DMJ+m1lhY5Anq3gYvrlqbsAZc7QP+TIZuyI/lpCrkc8H5G35QBQrdA95rbW3Mfpw9AirpK3AAHh8BwnrLXPd7d1d7bv2ea/f0AqfVyvehLChwAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQflBxMVNhGDkNTsAAAAUElEQVRYw+3YsQ0AMQhDUTvUmSj7T5QauC6nGyGn/yRL0OIOr7VauF73W6PtM0eEbGuMoYg4+96bowEAAAAAcKk5p6pKmamqOunuz48A//IA8RwcsqWMeFgAAAAASUVORK5CYII=) repeat-y top center;
 }
@@ -196,7 +204,7 @@ html {
 }
 
 .blog_author_middle {
-    color: #fff;
+    color: #000;
 }
 
 /* Produktinfo anpassen */
