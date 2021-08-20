@@ -354,7 +354,7 @@ $(document).ready(function() {
 
 
     function quickcover(enable) {
-        if ( enable == true) {
+        if ( enable == true && !window.location.pathname.match(/^\/.*\/[0-9]*\//)) {
 
             $('div.release_title, div.release_title_p2p').hover(function(e){
                 $("#hovercover").remove();
@@ -806,13 +806,14 @@ $(document).ready(function() {
                 togglefitermenue();
             }
 
-            console.log(window.location.pathname);
             if (window.location.pathname.match(/^\/.*\/[0-9]*\//)) {
 
                 GM_addStyle('.sub_bar_inactive {margin: 0 12px 0 12px;}')
 
-                document.getElementsByClassName("sub_bar_inactive")[1].outerHTML = '<div class="sub_bar_inactive">Release-Katalog:</div><div id="rls_filter_box" style="display:none;"><br></div><div id="rls_filter_selection"> <div id="rls_filter_menu" class="std_filter_bg"> <div class="std_filter_bg_left"></div> <div class="std_filter_bg_right"> Filter: <a href="#" id="open_rls_filter_mnu_link" style="padding-left: 10px;"> Quick Filter <img src="/static/img/icons/filter_arrow.gif" alt="" style="padding-left: 10px;"></a> </div> <div class="clear"></div> </div>  </div>';
-                togglefitermenue();
+                if (document.getElementsByClassName("sub_bar_inactive")[1].textContent == 'Release-Katalog:') {
+                    document.getElementsByClassName("sub_bar_inactive")[1].outerHTML = '<div class="sub_bar_inactive">Release-Katalog:</div><div id="rls_filter_box" style="display:none;"><br></div><div id="rls_filter_selection"> <div id="rls_filter_menu" class="std_filter_bg"> <div class="std_filter_bg_left"></div> <div class="std_filter_bg_right"> Filter: <a href="#" id="open_rls_filter_mnu_link" style="padding-left: 10px;"> Quick Filter <img src="/static/img/icons/filter_arrow.gif" alt="" style="padding-left: 10px;"></a> </div> <div class="clear"></div> </div>  </div>';
+                    togglefitermenue();
+                }
             }
 
             // Constants
@@ -983,19 +984,17 @@ $(document).ready(function() {
                 for (i = 0; i < releases.length; i++)
                     removeFiltering(releases[i]);
 
-                if(filter_TitleSwitch){
-                    if (!window.location.pathname.match(/^\/.*\/[0-9]*\//)) {
-                        for (i = 0; i < releases.length; i++) {
-                            var title = isReleaseTitle(releases[i]);
-                            var num = 0;
-                            for (j = 0; j < releases.length; j++) {
-                                var dubbetitle = isReleaseTitle(releases[j]);
-                                if (dubbetitle == title){
-                                    num++;
-                                    if(num > 1){
-                                        releases[j].style.display = 'none';
-                                        releases[j].nextElementSibling.style.display = 'none';
-                                    }
+                if(filter_TitleSwitch && !window.location.pathname.match(/^\/.*\/[0-9]*\//)){
+                    for (i = 0; i < releases.length; i++) {
+                        var title = isReleaseTitle(releases[i]);
+                        var num = 0;
+                        for (j = 0; j < releases.length; j++) {
+                            var dubbetitle = isReleaseTitle(releases[j]);
+                            if (dubbetitle == title){
+                                num++;
+                                if(num > 1){
+                                    releases[j].style.display = 'none';
+                                    releases[j].nextElementSibling.style.display = 'none';
                                 }
                             }
                         }
