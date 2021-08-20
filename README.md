@@ -5,7 +5,6 @@
 * [Features](#features)
 * [Installation](#installation)
 * [Version](#version)
-* [ToDo](#todo)
 * [Screenshots](#screenshots)
 * [Description](#description)
 
@@ -34,6 +33,11 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 ## Version
 <details>
 <br>
+<b>Version 0.3.6</b>
+<ul>
+	<li>Remove Filter from NFOviewer</li>
+	<li>Fix Styles Rework</li>
+</ul>
 <b>Version 0.3.4</b>
 <ul>
 	<li>Add Produktname Filter</li>
@@ -68,16 +72,6 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
   	<li>Add ModifyReleaseName</li>
   	<li>Add SearchMethod</li>
   	<li>Remove all external content in the Script "jquery, images ..."</li>
-</ul>
-</details>
-
-## ToDo
-<details>
-<br>
-<ul>
-  	<li>Rework Darkmode CSS</li>
-  	<li>Rework Lightmode CSS</li>
-	<li><s>Add alternate search Cover via xRel-API</s> &nbsp; &nbsp; <i>API have too many Limits</i></li>
 </ul>
 </details>
 
