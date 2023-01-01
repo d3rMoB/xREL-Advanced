@@ -33,6 +33,10 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 ## Version
 <details>
 <br>
+<b>Version 0.3.6.1</b>
+<ul>
+	<li>Add MediaInfo</li>
+</ul>
 <b>Version 0.3.6</b>
 <ul>
 	<li>Remove Filter from NFOviewer</li>
