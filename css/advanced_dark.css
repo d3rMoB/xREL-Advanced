@@ -469,3 +469,7 @@ div.table-row > div.w90, div.table-head > div.w90 {
 #bottom_sitemap {
     background: none;
 }
+
+.bb-mediainfo-section-header > .bb-mediainfo-title a {
+  color: #cecece;
+}
