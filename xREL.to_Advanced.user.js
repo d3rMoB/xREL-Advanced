@@ -1490,6 +1490,21 @@ $(document).ready(function() {
     // add MediaInfo Row in Displayoptions
 
     function mediainfo() {
+        if (
+            window.location.pathname.match(/^\/p2p\/.*\/releases\.html/) ||
+            window.location.pathname.match(/^\/p2p\/releases\.html/) ||
+            window.location.pathname.match(/^\/releases\.html/) ||
+            window.location.pathname.match(/^\/home\.html/) ||
+            window.location.pathname.match(/^\/.*-release-list\.html/) ||
+            window.location.pathname.match(/^\/(movie|tv|title|software|xxx)\/[0-9]*\//)
+        ) {
+            for (let i = 0; i < document.getElementsByClassName('last_comment').length; i++) {
+                var re = /MediaInfo/;
+                if (re.test(document.getElementsByClassName('last_comment')[i].innerText)) {
+                    document.getElementsByClassName("last_comment")[i].outerHTML = '<div class="last_comment" style="display:none;">' + document.getElementsByClassName("last_comment")[i].innerHTML + '</div>';
+                }
+            }
+        }
         if (window.location.href.indexOf("/movie-nfo/") > -1 || window.location.href.indexOf("nfo.html") > -1 ) {
             var re = /Kommentare \(([0-9]*)\)/;
             for (let i = 0; i < document.getElementsByClassName('box_list2_right').length; i++) {
