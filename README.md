@@ -20,6 +20,7 @@
   	<li>QuickCover Ansicht Cover in Releaseübersicht</li>
   	<li>QuickFilter Filter nach Categorie, Audio, Video und nach Namen in allen Übersichten</li>
   	<li>Produktname Filter zeigt nur ein Produkt pro Seite</li>
+	<li>Zeige MediaInfo aus den Kommentaren auf Produktseite</li>
 </ul>
 
 ## Installation
