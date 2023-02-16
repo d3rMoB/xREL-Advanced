@@ -10,7 +10,7 @@
 
 ## Features
 <ul>
-	<li>Schnellsuche für Releases auf bekannten deutschen Downloadseiten (<a href="https://github.com/DudeX13/xREL-Advanced/blob/master/README.md#description">Konfigurierbar</a>). </li>
+	<li>Schnellsuche für Releases und Produktnamen auf externen Seiten (<a href="https://github.com/DudeX13/xREL-Advanced/blob/master/README.md#description">Konfigurierbar</a>). </li>
 	<li>Die Profile der Schauspieler/Regisseure werden durch Bilder der Person ergänzt</li>
   	<li>Funktion zum unkomplizierten Kopieren von Releasenamen</li>
   	<li>Alternative Ansicht für die Rubrik mit den Top-Trailern</li>
@@ -34,6 +34,16 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 ## Version
 <details>
 <br>
+<b>ToDo 0.3.x</b>
+<ul>
+	<li>fix Chrome XHR get API error</li>
+</ul>
+<b>Version 0.3.7</b>
+<ul>
+	<li>Add API Method Search</li>
+	<li>Add Search Category filter</li>
+	<li>Update Copy Button</li>
+</ul>
 <b>Version 0.3.6.1</b>
 <ul>
 	<li>Add MediaInfo</li>
@@ -106,15 +116,17 @@ newEngine = {
     method : "get,post,mod,url (*description-method)",
     searchName : "search query",
     searchUrl : "serch url address",
+    category : "set specific category where the icon is visible", (all,movie,tv,title(game...))
     active : false/true
 };
 newEngine["modifyReleaseName"] = function(prodName/relName) { edit releasename or productname add or modify whit regex };   //optinal
-searchEngines.push(newEngine);               //end of search item whit releasename or
-productNameSearchEngines.push(newEngine);    //end of search item whit productname
+searchEngines.push(newEngine);                                                                                              //end of search item whit releasename
+productNameSearchEngines.push(newEngine);                                                                                   //end of search item whit productname
 
 *description-method
    method : "get",  // open url whit searchUrl?searchName=
    method : "post", // open searchUrl > post releasename or productname to searchName
    method : "mod",  // open (get method) url whit searchUrl/releasename or productname
    method : "url",  // open (get method) url searchUrl
+   method : "api",  // request searchUrl api and searchName json node selekt open whit baseUrl
 ```
