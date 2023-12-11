@@ -38,6 +38,11 @@ Getestet wurde Tampermonkey für Chrome und Firefox: https://www.tampermonkey.ne
 <ul>
 	<li>fix Chrome XHR get API error</li>
 </ul>
+<b>Version 0.3.9</b>
+<ul>
+	<li>Content-security-policy (CSP) Block</li>
+	<li>injected JavaScript in sandbox mode</li>
+</ul>
 <b>Version 0.3.8</b>
 <ul>
 	<li>Update DarkMode CSS for new Startpage</li>
